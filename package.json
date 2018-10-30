@@ -5,9 +5,13 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "build": "mkdir -p build; browserify src/index.js -g yo-yoify -o build/app.js; babel build/app.js --out-file build/app.js",
+    "build": "mkdir -p build; browserify src/browser-solc.js -o build/app.js; babel build/app.js --out-file index.js",
     "csslint": "csslint --ignore=order-alphabetical --errors='errors,duplicate-properties,empty-rules' --exclude-list='assets/css/font-awesome.min.css' assets/css/",
     "lint": "standard"
+  },
+  "main": "./index.js",
+  "dependencies": {
+    "solc": "0.4.21"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -38,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericxtang/browser-solc.git"
+    "url": "git+https://github.com/guardaco/browser-solc.git"
   },
   "keywords": [
     "ethereum",
@@ -47,7 +51,7 @@
     "browser"
   ],
   "bugs": {
-    "url": "https://github.com/ericxtang/browser-solc/issues"
+    "url": "https://github.com/guardaco/browser-solc/issues"
   },
   "homepage": "",
   "standard": {
@@ -56,5 +60,4 @@
       "soljson.js"
     ]
   }
-
 }
